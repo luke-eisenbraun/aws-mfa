@@ -1,0 +1,10 @@
+ {
+  "name": "AWS Show MFA",
+  "version": "1.1",
+  "manifest_version": 2,
+  "description": "Make the MFA window show on AWS signin",
+  "content_scripts": [ {
+    "js": [ "jquery-2.1.1.min.js", "background.js" ],
+    "matches": [ "https://signin.aws.amazon.com/*"]
+  }]
+}
