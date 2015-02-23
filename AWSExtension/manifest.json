@@ -1,10 +1,25 @@
- {
-  "name": "AWS Show MFA",
-  "version": "1.1",
-  "manifest_version": 2,
-  "description": "Make the MFA window show on AWS signin",
-  "content_scripts": [ {
-    "js": [ "jquery-2.1.1.min.js", "background.js" ],
-    "matches": [ "https://signin.aws.amazon.com/*"]
-  }]
+{
+	"author": "Luke Eisenbraun",
+	"background":{
+            "scripts":["js/background.js"]
+    },
+	"browser_action":{
+		"default_icon":"img/icon-48.png"
+	},
+	"content_scripts": [ {
+		"js": [ "js/mfashower.js" ],
+		"matches": [ "https://signin.aws.amazon.com/*"]
+	}],
+	"description": "Make the MFA window show on AWS signin",
+	"icons": {
+		"48": "img/icon-48.png",
+		"128": "img/icon-128.png"
+	},
+	"manifest_version": 2,
+	"name": "AWS Show MFA",
+	"options_page": "options.html",
+	"permissions": [
+		"storage"
+	],
+	"version": "1.2"
 }
